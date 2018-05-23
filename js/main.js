@@ -1,7 +1,7 @@
 
 var display1 = $('#display1')
 var display2 = $('#display2')
-
+var pi = false;
 
 // var display1 = ocument.getElementById("display1");
 // var display2 = document.getElementById("display2");
@@ -11,10 +11,22 @@ var operacion;
 var btn = document.getElementsByClassName('btn');
 var ope = document.getElementsByClassName('btnOpe');
 
-$(".btn").on( "click", function() {
-    display2.append($( this ).text());
+$("#ac").on( "click", function() {
+    display1.html('')
+    display2.html('')
   });
 
+  $("#c").on( "click", function() {
+      display2.html('')
+    });
+
+$(".btn").on( "click", function() {
+    if (pi) {
+        display2.html($( this ).text())
+    }else {
+      display2.append($( this ).text());
+    }
+  });
 
 
   $(".btnOpe").on( "click", function() {
@@ -33,6 +45,7 @@ $(".btn").on( "click", function() {
     let resultado = igual()
     display2.html(resultado)
     display1.html('')
+    pi = true
     });
 
 
