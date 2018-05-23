@@ -1,6 +1,8 @@
 
-var display1;
-var display2;
+var display1 = $('#display1')
+var display2 = $('#display2')
+
+
 // var display1 = ocument.getElementById("display1");
 // var display2 = document.getElementById("display2");
 
@@ -9,67 +11,79 @@ var operacion;
 var btn = document.getElementsByClassName('btn');
 var ope = document.getElementsByClassName('btnOpe');
 
-   btn.onclick = function(event) {
-    display2.append($(this).text())
-   };
+$(".btn").on( "click", function() {
+    display2.append($( this ).text());
+  });
 
 
-   btnOpe.onclick = function(event) {
-    display1 = display2
+
+  $(".btnOpe").on( "click", function() {
+
+        display1 = $('#display1')
+        display2 = $('#display2')
+
+    display1.append(display2.text())
+    display2.html('')
+
     operacion  = this.getAttribute('id')
-   };
 
- 
+  });
+
+  $("#igual").on( "click", function() {
+    let resultado = igual()
+    display2.html(resultado)
+    display1.html('')
+    });
 
 
 //suma
 var suma = function (){
-  return display1 + display2
+  return parseInt(display1.text()) + parseInt(display2.text())
 }
 //resta
 var resta = function (){
-  return display1 + display2
+  return parseInt(display1.text()) + parseInt(display2.text())
 }
 //dividir
 var dividir = function (){
-  return display1 / display2
+  return parseInt(display1.text()) / parseInt(display2.text())
 }
 //multiplicar
 var multiplicar = function (){
-  return display1 * display2
+  return parseInt(display1.text()) * parseInt(display2.text())
 }
 //porcentaje
 var porcentaje = function (){
-   let porcentaje = display1 / 100
-    return  porcentaje * display2
+   let porcentaje = parseInt(display1.text()) / 100
+    return  porcentaje * parseInt(display2.text())
 }
 
 //masmenos
 var masMenos = function (){
-   return  display2 - (display2 * 2)
+   return  parseInt(display2.text()) - (parseInt(display2.text()) * 2)
 }
 
 
 //igual
   function igual(){
-    switch (op) {
+    switch (operacion) {
       case 'suma':
-        display2 = suma()
+        return suma()
       break
       case 'resta':
-        display2 = resta()
+        return resta()
       break
       case 'multiplicar':
-        display2 = miltiplicar()
+        return multiplicar()
       break
       case 'dividir':
-        display2 = dividir()
+        return dividir()
       break
       case 'porcentaje':
-        display2 = porcentaje()
+        return porcentaje()
       break
       case 'masMenos':
-      display2 = masMenos()
+      return masMenos()
     break
     }
   }
