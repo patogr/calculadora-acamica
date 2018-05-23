@@ -2,8 +2,47 @@
 <html>
 <head>
   <title>Calculadora</title>
+  <meta charset="utf-8">
 </head>
+<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./css/style.css">
 <body>
 
+  <div class="calculadora">
+    <div class="display">
+      <div id="displayOperacion"></div>
+      <div id="displayResultado"></div>
+    </div>
+    <div class="botones">
+      <div id="ac">AC</div>
+      <div id="c">C</div>
+      <div id="porcentaje">%</div>
+      <div id="masMenos">+/-</div>
+      <div id="n7">7</div>
+      <div id="n8">8</div>
+      <div id="n9">9</div>
+      <div id="dividir">&#247;</div>
+      <div id="n4">4</div>
+      <div id="n5">5</div>
+      <div id="n6">6</div>
+      <div id="multiplicar">x</div>
+      <div id="n1">1</div>
+      <div id="n2">2</div>
+      <div id="n3">3</div>
+      <div id="resta">-</div>
+      <div id="0">0</div>
+      <div id="coma">,</div>
+      <div id="igual">=</div>
+      <div id="suma">+</div>
+    </div>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  $( ".botones div" ).on( "click", function() {
+    $( "#displayOperacion" ).append($( this ).text());
+  });
+
+</script>
 </body>
 </html>
