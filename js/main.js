@@ -26,6 +26,7 @@ $(".btn").on( "click", function() {
     }else {
       display2.append($( this ).text());
     }
+    pi = false
   });
 
 
@@ -55,7 +56,7 @@ var suma = function (){
 }
 //resta
 var resta = function (){
-  return parseInt(display1.text()) + parseInt(display2.text())
+  return parseInt(display1.text()) - parseInt(display2.text())
 }
 //dividir
 var dividir = function (){
