@@ -3,13 +3,14 @@ body{
 }
 
 .calculadora{
-  width: 600px;
+  max-width: 600px;
   background-color: #333;
   margin: 0 auto;
+  border:2px solid #333;
   div.display{
     div{
       width: 100%;
-      min-height: 65px;
+      height: 65px;
       padding: 15px;
       box-sizing: border-box;
       font-family: 'Gugi', cursive;
@@ -21,6 +22,8 @@ body{
     // flex-direction: row;
     flex-flow: row wrap;
     align-items: center;
+    border: 2px solid #333;
+    box-sizing: border-box;
     div{
       width:25%;
       box-sizing: border-box;
@@ -29,16 +32,29 @@ body{
       background-color: #eaeaea;
       text-align: center;
       &:hover{
-        background-color: #f00;
+        background-color: rgb(227, 199, 145);
       }
 
     }
   }
 }
 
-#displayOperacion{
+#c{
+  background-color: #ccc;
+}
+#ac{
+  background-color: #f00;
+}
+
+#display1{
   color: yellow;
 }
-#displayResultado{
+#display2{
   color: lightgreen;
+}
+#igual{
+  background-color: lightblue;
+}
+.btnOpe{
+  background-color: orange !important;
 }
